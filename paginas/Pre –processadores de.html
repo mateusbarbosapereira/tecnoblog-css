@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description" content="esse e um, blog de tecnologia">
+    <meta name="author" content="kailane">
+    <meta name="robots" content="index,follow">
+    <meta http-equiv="refresh" content="30">
+    <meta http-equiv="X-UA-compatible" content="IE=edge">
+    <meta name="theme-color" content="#ffffff">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="keywords" content="tecnologia,blog,html">
+    <title>tecnoblog mateus</title>
+    <link rel="stylesheet" type="text/css" href="../css/estilo.css">
+</head>
+
+<body>
+
+    <div id="area-cabecalho">
+
+        <div id="area-logo">
+            <h1>Tec<span class="branco">Blog</span></h1>
+        </div>
+        <div id="area-menu">
+          <a href="../index.html">Home</a>
+          <a href="Frameworks_css .html">Frameworks css </a>
+          <a href= "Pre –processadores de.html">Pre –processadores css </a>
+          <a href="Metodologias de css.html">Metodologias de css</a>
+        </div>
+
+    </div>
+
+    <div id="area-principal">
+
+        <div id="area-postagens">
+
+            <!-- abertura postagem -->
+            <div class="postagem">
+                <h2>sass</h2>
+                <span class="data-postagem">postado 20 março 2022</span>
+                <img width="620px" src="../imagens/pre-processadores/logo sass.png">
+                <p>
+                    <!-- Introdução -->
+  <section class="container mx-auto p-8">
+    <h2 class="text-3xl font-bold mb-4">Introdução ao SASS</h2>
+    <p class="mb-4">SASS (Syntactically Awesome Stylesheets) é uma linguagem de extensão CSS que adiciona poder e elegância ao CSS básico. Criado por Hampton Catlin em 2006, SASS tem evoluído continuamente, sendo mantido por Natalie Weizenbaum e Chris Eppstein. A principal motivação por trás do SASS é melhorar a escrita de CSS, tornando-o mais eficiente, modular e reutilizável.</p>
+  </section>
+
+  <!-- Filosofia e Objetivos -->
+  <section class="container mx-auto p-8">
+    <h2 class="text-3xl font-bold mb-4">Filosofia e Objetivos</h2>
+    <ul class="list-decimal ml-8 mb-4">
+      <li class="mb-2">
+        <h3 class="text-xl font-semibold mb-2">Modularidade:</h3>
+        <p class="mb-4">Facilitar a divisão de grandes folhas de estilo em pequenos módulos.</p>
+      </li>
+      <li class="mb-2">
+        <h3 class="text-xl font-semibold mb-2">Reutilização:</h3>
+        <p class="mb-4">Permitir a reutilização de estilos através de mixins e funções.</p>
+      </li>
+      <li class="mb-2">
+        <h3 class="text-xl font-semibold mb-2">Manutenibilidade:</h3>
+        <p class="mb-4">Melhorar a manutenção de grandes projetos CSS.</p>
+      </li>
+      <li class="mb-2">
+        <h3 class="text-xl font-semibold mb-2">Flexibilidade:</h3>
+        <p class="mb-4">Oferecer ferramentas avançadas para criar folhas de estilo dinâmicas e complexas.</p>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Componentes do SASS -->
+  <section class="container mx-auto p-8">
+    <h2 class="text-3xl font-bold mb-4">Componentes do SASS</h2>
+    <ul class="list-decimal ml-8 mb-4">
+      <li class="mb-2">
+        <h3 class="text-xl font-semibold mb-2">Variáveis:</h3>
+        <p class="mb-4">Permitem armazenar valores que podem ser reutilizados em toda a folha de estilo.</p>
+        <pre class="bg-gray-800 rounded-lg p-4 overflow-x-auto text-white"><code class="language-scss">$primary-color: #333;
+
+body {
+  color: $primary-color;
+}</code></pre>
+      </li>
+      <li class="mb-2">
+        <h3 class="text-xl font-semibold mb-2">Aninhamento:</h3>
+        <p class="mb-4">Permite escrever CSS de forma hierárquica, imitando a estrutura HTML.</p>
+        <pre class="bg-gray-800 rounded-lg p-4 overflow-x-auto text-white"><code class="language-scss">nav {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li { display: inline-block; }
+
+  a {
+    text-decoration: none;
+    color: $primary-color;
+  }
+}</code></pre>
+      </li>
+      <li class="mb-2">
+        <h3 class="text-xl font-semibold mb-2">Partials e Imports:</h3>
+        <p class="mb-4">Facilitam a organização do código CSS em vários arquivos.</p>
+        <pre class="bg-gray-800 rounded-lg p-4 overflow-x-auto text-white"><code class="language-scss">// _base.scss
+body {
+  font-family: Arial, sans-serif;
+}
+
+// main.scss
+@import 'base';</code></pre>
+      </li>
+      <li class="mb-2">
+        <h3 class="text-xl font-semibold mb-2">Mixins:</h3>
+        <p class="mb-4">Permitem criar blocos de código CSS reutilizáveis.</p>
+        <pre class="bg-gray-800 rounded-lg p-4 overflow-x-auto text-white"><code class="language-scss">@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+.box { @include border-radius(10px); }</code></pre>
+      </li>
+      <li class="mb-2">
+        <h3 class="text-xl font-semibold mb-2">Funções:</h3>
+        <p class="mb-4">Similar às funções em linguagens de programação, retornam valores com base em parâmetros.</p>
+        <pre class="bg-gray-800 rounded-lg p-4 overflow-x-auto text-white"><code class="language-scss">@function px-to-rem($px, $base: 16) {
+  @return #{$px / $base}rem;
+}
+
+body {
+  font-size: px-to-rem(16);
+}</code></pre>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Como Funciona o SASS -->
+  <section class="container mx-auto p-8">
+    <h2 class="text-3xl font-bold mb-4">Como Funciona o SASS</h2>
+    <h3 class="text-xl font-semibold mb-2">Processo de Compilação</h3>
+    <ol class="list-decimal ml-8 mb-4">
+      <li class="mb-2">
+        <h4 class="font-semibold mb-2">Linhagem de Comando:</h4>
+        <p class="mb-4">Compilação via linha de comando usando o comando <code class="language-bash">sass</code>.</p>
+        <pre class="bg-gray-800 rounded-lg p-4 overflow-x-auto text-white"><code class="language-bash">sass source/styles.scss build/styles.css</code></pre>
+      </li>
+      <li class="mb-2">
+        <h4 class="font-semibold mb-2">Task Runners:</h4>
+        <p class="mb-4">Utilização de ferramentas como Gulp para compilar automaticamente o SASS.</p>
+        <pre class="bg-gray-800 rounded-lg p-4 overflow-x-auto text-white"><code class="language-javascript">// Gulpfile.js
+const gulp = require('gulp');
+const sass = require('gulp-sass')(require('sass'));
+
+gulp.task('sass', function () {
+  return gulp.src('source/styles.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('build'));
+});</code></pre>
+      </li>
+      <li class="mb-2">
+        <h4 class="font-semibold mb-2">IDEs:</h4>
+        <p class="mb-4">Integração com IDEs como Visual Studio Code para compilar SASS diretamente no ambiente de desenvolvimento.</p>
+      </li>
+    </ol>
+    <h3 class="text-xl font-semibold mb-2">Estrutura do Código</h3>
+    <p class="mb-4">O SASS pode ser escrito em duas sintaxes: .scss e .sass. A sintaxe .scss é mais semelhante ao CSS tradicional, enquanto a .sass usa indentação para definir a hierarquia.</p>
+    <ul class="list-disc ml-8 mb-4">
+      <li class="mb-2">
+        <h4 class="font-semibold mb-2">Exemplo em .scss:</h4>
+        <pre class="bg-gray-800 rounded-lg p-4 overflow-x-auto text-white"><code class="language-scss">$font-stack: Helvetica, sans-serif;
+$primary-color: #333;
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}</code></pre>
+      </li>
+      <li class="mb-2">
+        <h4 class="font-semibold mb-2">Exemplo em .sass:</h4>
+        <pre class="bg-gray-800 rounded-lg p-4 overflow-x-auto text-white">  
+                </p>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/1F2jqH-d7bw?si=Hg1LNJj48XcE826I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <a href="https://sass-lang.com/">Leia mais</a>
+            </div>
+            <!--// fechamento postagem -->
+
+            <!-- abertura postagem -->
+            <div class="postagem">
+                <h2>less</h2>
+                <span class="data-postagem">postado 10 março 2022</span>
+                <img width="400px" src="../imagens/pre-processadores/logo less.png">
+                <h2>Fundamentos Teóricos</h2>
+
+<h3>Introdução</h3>
+<p>LESS (Leaner Style Sheets) é uma linguagem de extensão CSS que adiciona funcionalidades como variáveis, mixins, funções e aninhamento ao CSS, tornando-o mais dinâmico e fácil de manter. Criado por Alexis Sellier em 2009, LESS foi um dos primeiros preprocessadores CSS amplamente adotados e inspirou o desenvolvimento de outras ferramentas similares, como SASS.</p>
+
+<h3>Filosofia e Objetivos</h3>
+<p>LESS foi desenvolvido com o objetivo de tornar o desenvolvimento de CSS mais eficiente e modular. Ele permite que os desenvolvedores escrevam código CSS de forma mais concisa e reutilizável, promovendo melhores práticas de programação e manutenção de grandes projetos de estilos. Seus principais objetivos incluem:</p>
+<ul>
+    <li>Simplificação: Facilitar a escrita e a leitura de CSS.</li>
+    <li>Modularidade: Permitir a divisão do código CSS em pequenos módulos reutilizáveis.</li>
+    <li>Manutenibilidade: Melhorar a organização e manutenção de projetos CSS complexos.</li>
+    <li>Compatibilidade: Ser compatível com o CSS tradicional, de modo que todo CSS válido também seja um código LESS válido.</li>
+</ul>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/YD91G8DdUsw?si=IDIx06BXRaTLsEXq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                <a href="https://lesscss.org/">Leia mais</a>
+            </div>
+            <!--// fechamento postagem -->
+
+            <!-- abertura postagem -->
+            <div class="postagem">
+                <h2>Stylus </h2>
+                <span class="data-postagem">postado 10 março 2022</span>
+                <img width="620px" src="../imagens/pre-processadores/stylus-logo-FDA2DC67B0-seeklogo.com.png">
+                <h2>Stylus</h2>
+
+<p>Stylus é uma linguagem de extensão para CSS, conhecida como preprocessador CSS, que adiciona funcionalidades avançadas para facilitar a escrita e manutenção de folhas de estilo. Criado por TJ Holowaychuk, Stylus oferece uma sintaxe flexível e uma variedade de recursos poderosos que tornam o CSS mais dinâmico e eficiente. A seguir, um detalhamento sobre Stylus:</p>
+
+<h3>Fundamentos do Stylus</h3>
+
+<h4>Introdução</h4>
+<p>Stylus é um preprocessador CSS que permite escrever CSS de maneira mais eficiente e organizada. Ele suporta variáveis, mixins, aninhamento, funções, e operações, proporcionando uma sintaxe mais limpa e funcionalidades avançadas que simplificam a gestão de grandes projetos de estilos.</p>
+
+<h4>Filosofia e Objetivos</h4>
+<p>Stylus foi desenvolvido com os seguintes objetivos em mente:</p>
+
+<ul>
+    <li><strong>Flexibilidade:</strong> Oferecer uma sintaxe extremamente permissiva e poderosa.</li>
+    <li><strong>Produtividade:</strong> Facilitar a escrita de CSS e aumentar a produtividade dos desenvolvedores.</li>
+    <li><strong>Modularidade:</strong> Permitir a divisão do código CSS em pequenos módulos reutilizáveis.</li>
+    <li><strong>Manutenibilidade:</strong> Melhorar a organização e manutenção de projetos CSS complexos.</li>
+</ul>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/eJahtnmywMI?si=HRFTKeBe-Z7LiBGF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <a href="https://stylus-lang.com/">Leia mais</a>
+            </div>
+            <!--// fechamento postagem -->
+
+
+            
+
+
+
+
+        </div>
+        <div id="area-lateral">
+
+
+            <div class="conteudo-lateral">
+                <h3>Postagens recentes</h3>
+
+                <div class="postagem-lateral">
+                    <p>conteudo aqui...</p>
+                    <a href="">Leia mais</a>
+                </div>
+
+                <div class="postagem-lateral" style="border-bottom: none;">
+                    <p>conteudo aqui...</p>
+                    <a href="">Leia mais</a>
+                </div>
+
+                <div class="postagem-lateral" style="border-bottom: none;">
+                    <p>conteudo aqui...</p>
+                    <a href="">Leia mais</a>
+                </div>
+
+                <div class="postagem-lateral" style="border-bottom: none;">
+                    <p>conteudo aqui...</p>
+                    <a href="">Leia mais</a>
+                </div>
+
+            </div>
+
+            <div class="conteudo-lateral">
+                <h3>Categorias</h3>
+
+                <a href="../index.html">Home</a>
+            <a href="paginas/Frameworks_css .html">Frameworks css </a>
+            <a href="paginas/Pre –processadores de.html">Pre –processadores css </a>
+            <a href="paginas/Metodologias de css.html">Metodologias de css</a>
+
+            </div>
+
+
+        </div>
+
+        <div id="rodape">
+            Todos os direitos reservados
+        </div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description" content="esse e um, blog de tecnologia">
+    <meta name="author" content="kailane">
+    <meta name="robots" content="index,follow">
+    <meta http-equiv="refresh" content="30">
+    <meta http-equiv="X-UA-compatible" content="IE=edge">
+    <meta name="theme-color" content="#ffffff">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="keywords" content="tecnologia,blog,html">
+    <title>tecnoblog mateus</title>
+   <link rel="stylesheet" href="../css/estilo.css">
+</head>
+
+<body>
+
+    <div id="area-cabecalho">
+
+        <div id="area-logo">
+            <h1>Tec<span class="branco">Blog</span></h1>
+        </div>
+        <div id="area-menu">
+            <a href="../index.html">Home</a>
+            <a href="Frameworks_css .html">Frameworks css </a>
+            <a href= "Pre –processadores de.html">Pre –processadores css </a>
+            <a href="Metodologias de css.html">Metodologias de css</a>
+        </div>
+
+    </div>
+
+    <div id="area-principal">
+
+        <div id="area-postagens">
+
+            <!-- abertura postagem -->
+            <div class="postagem">
+                <h2>BEM</h2>
+                <span class="data-postagem">postado 20 março 2022</span>
+                <img width="620px" src="../imagens/imagem metodologia/logfo bem.png">
+                <h2>BEM (Block, Element, Modifier)</h2>
+
+<p>BEM, que significa Block, Element, Modifier (Bloco, Elemento, Modificador), é uma metodologia de desenvolvimento de CSS criada pela equipe do Yandex. Seu objetivo principal é proporcionar uma estrutura modular e reutilizável para a escrita de CSS, facilitando a manutenção e a escalabilidade dos projetos de desenvolvimento web. A seguir, um detalhamento sobre BEM:</p>
+
+<h3>Fundamentos da Metodologia BEM</h3>
+
+<h4>Introdução</h4>
+<p>BEM é uma abordagem que organiza o CSS em blocos (blocks), elementos (elements), e modificadores (modifiers). Esta estrutura ajuda a tornar o código CSS mais legível e previsível, além de facilitar a colaboração entre desenvolvedores. A metodologia BEM resolve problemas comuns no desenvolvimento de CSS, como o escopo de seletores, nomes de classes conflitantes, e dificuldades na manutenção de grandes folhas de estilo.</p>
+
+<h4>Filosofia e Objetivos</h4>
+<p>A filosofia BEM se baseia na separação de responsabilidades e na criação de componentes independentes. Seus principais objetivos incluem:</p>
+
+<ul>
+    <li><strong>Reutilização:</strong> Facilitar a reutilização de componentes CSS em diferentes partes do projeto.</li>
+    <li><strong>Escalabilidade:</strong> Permitir a expansão do projeto sem complicações na folha de estilos.</li>
+    <li><strong>Manutenibilidade:</strong> Tornar o código CSS mais fácil de manter e refatorar.</li>
+    <li><strong>Clareza:</strong> Fornecer uma estrutura clara e consistente para nomeação de classes e organização de estilos.</li>
+</ul>
+
+<h3>Estrutura da Metodologia BEM</h3>
+
+<h4>Blocos (Blocks)</h4>
+<p>Um bloco é uma unidade independente e autônoma que representa um componente da interface, como um menu, um botão ou um cabeçalho. Um bloco pode ser reutilizado em diferentes partes da aplicação sem alterações no código CSS.</p>
+<pre><code>
+<!-- HTML -->
+<div class="menu"></div>
+<div class="button"></div>
+
+<!-- CSS -->
+.menu {
+    /* Estilos para o menu */
+}
+
+.button {
+    /* Estilos para o botão */
+}
+</code></pre>
+
+<h4>Elementos (Elements)</h4>
+<p>Um elemento é uma parte de um bloco que tem uma função específica. Os elementos são dependentes do bloco e não fazem sentido fora do contexto do bloco. Eles são representados com dois sublinhados (__) após o nome do bloco.</p>
+<pre><code>
+<!-- HTML -->
+<div class="menu">
+    <div class="menu__item"></div>
+    <div class="menu__item"></div>
+</div>
+
+<!-- CSS -->
+.menu__item {
+    /* Estilos para o item do menu */
+}
+</code></pre>
+
+<h4>Modificadores (Modifiers)</h4>
+<p>Um modificador é uma variação de um bloco ou elemento que altera sua aparência ou comportamento. Os modificadores são representados com dois hífens (--) após o nome do bloco ou elemento.</p>
+<pre><code>
+<!-- HTML -->
+<div class="button button--large"></div>
+<div class="button button--primary"></div>
+
+<!-- CSS -->
+.button--large {
+    /* Estilos para o botão grande */
+}
+
+.button--primary {
+    /* Estilos para o botão primário */
+}
+</code></pre>
+
+<h3>Vantagens da Metodologia BEM</h3>
+
+<ul>
+    <li><strong>Previsibilidade:</strong> Os nomes das classes seguem uma convenção clara e consistente, tornando o código CSS mais previsível.</li>
+    <li><strong>Escopo Claro:</strong> Cada bloco e elemento tem um escopo claro e bem definido, evitando conflitos de nomes de classes.</li>
+    <li><strong>Reutilização de Código:</strong> A modularidade facilita a reutilização de componentes em diferentes partes do projeto.</li>
+    <li><strong>Colaboração:</strong> Facilita a colaboração entre diferentes desenvolvedores, pois a estrutura do código é mais organizada e compreensível.</li>
+    <li><strong>Manutenção:</strong> O código CSS se torna mais fácil de manter e refatorar, mesmo em projetos grandes e complexos.</li>
+</ul>
+
+<h3>Exemplo de Utilização da Metodologia BEM</h3>
+<pre><code>
+<!-- HTML -->
+<nav class="nav">
+    <ul class="nav__list">
+        <li class="nav__item">
+            <a href="#" class="nav__link nav__link--active">Home</a>
+        </li>
+        <li class="nav__item">
+            <a href="#" class="nav__link">About</a>
+        </li>
+    </ul>
+</nav>
+
+<!-- CSS -->
+.nav {
+    /* Estilos para o bloco de navegação */
+}
+
+.nav__list {
+    /* Estilos para a lista de navegação */
+}
+
+.nav__item {
+    /* Estilos para o item da navegação */
+}
+
+.nav__link {
+    /* Estilos para o link da navegação */
+}
+
+.nav__link--active {
+    /* Estilos para o link ativo da navegação */
+}
+</code></pre>
+
+<h3>Conclusão</h3>
+<p>A metodologia BEM é uma abordagem poderosa e eficaz para a escrita e organização de CSS. Ela promove boas práticas de desenvolvimento, como a modularidade, reutilização de código e clareza na estrutura dos estilos. Utilizando BEM, os desenvolvedores podem criar projetos web mais escaláveis, manuteníveis e colaborativos, tornando o desenvolvimento de CSS mais eficiente e organizado.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TcC8VXib3LA?si=x9mE5yrOgHu2mzY2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                <a href="https://getbem.com/">Leia mais</a>
+            </div>
+            <!--// fechamento postagem -->
+
+            <!-- abertura postagem -->
+            <div class="postagem">
+                <h2>Oocss</h2>
+                <span class="data-postagem">postado 10 março 2022</span>
+                <img width="400px" src="../imagens/imagem metodologia/logo oocss.avif">
+                <h2>OOCSS (Object-Oriented CSS)</h2>
+
+<p>OOCSS, que significa Object-Oriented CSS (CSS Orientado a Objetos), é uma metodologia de desenvolvimento de CSS que visa promover a reutilização, modularidade e eficiência na escrita de estilos para páginas web. A seguir, são detalhados os fundamentos e práticas essenciais da metodologia OOCSS:</p>
+
+<h3>Fundamentos da Metodologia OOCSS</h3>
+
+<h4>Introdução</h4>
+<p>OOCSS é baseado no princípio de separar a estrutura (objetos) do visual (skins). Isso significa que os estilos são divididos em objetos reutilizáveis que definem a estrutura e os skins que aplicam a aparência visual. Essa separação ajuda a reduzir a repetição de código CSS e facilita a manutenção.</p>
+
+<h4>Filosofia e Objetivos</h4>
+<p>A filosofia OOCSS se concentra em:</p>
+
+<ul>
+    <li><strong>Reutilização:</strong> Encorajar a criação de objetos CSS que podem ser aplicados a diferentes elementos HTML.</li>
+    <li><strong>Modularidade:</strong> Dividir estilos em componentes independentes e reutilizáveis.</li>
+    <li><strong>Separation of Concerns (Separação de Preocupações):</strong> Separar a estrutura (objetos) do visual (skins), promovendo uma arquitetura mais limpa e organizada.</li>
+    <li><strong>Performance:</strong> Reduzir o tamanho dos arquivos CSS e melhorar o desempenho da renderização.</li>
+</ul>
+
+<h3>Práticas da Metodologia OOCSS</h3>
+
+<h4>Objetos (Objects)</h4>
+<p>Objetos são padrões de design CSS reutilizáveis que definem a estrutura visual e funcional de um componente. Eles encapsulam propriedades CSS genéricas que podem ser aplicadas a diferentes elementos HTML.</p>
+<pre><code>
+<!-- Exemplo de objeto CSS -->
+<div class="box">
+    <p class="box__content">Conteúdo da caixa</p>
+</div>
+
+/* CSS para o objeto */
+.box {
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.box__content {
+    font-size: 16px;
+}
+</code></pre>
+
+<h4>Skins (Skins)</h4>
+<p>Skins são classes que aplicam a aparência visual específica a um objeto. Elas separam a estrutura (objeto) do visual (skin), permitindo que um objeto possa ter várias skins sem alterar sua estrutura.</p>
+<pre><code>
+<!-- Exemplo de skin CSS -->
+<div class="button button--primary">Botão Primário</div>
+<div class="button button--secondary">Botão Secundário</div>
+
+/* CSS para skins */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.button--primary {
+    background-color: #3498db;
+    color: #fff;
+}
+
+.button--secondary {
+    background-color: #ccc;
+    color: #333;
+}
+</code></pre>
+
+<h3>Vantagens da Metodologia OOCSS</h3>
+
+<ul>
+    <li><strong>Reutilização de Código:</strong> Encoraja a criação de estilos reutilizáveis que podem ser aplicados a diferentes elementos.</li>
+    <li><strong>Modularidade:</strong> Facilita a manutenção e escalabilidade do código CSS.</li>
+    <li><strong>Performance:</strong> Reduz o tamanho dos arquivos CSS e melhora a velocidade de renderização.</li>
+    <li><strong>Organização:</strong> Promove uma estrutura CSS mais organizada e fácil de entender.</li>
+</ul>
+
+<h3>Exemplo de Utilização da Metodologia OOCSS</h3>
+<pre><code>
+<!-- HTML -->
+<div class="card">
+    <img src="imagem.jpg" alt="Imagem" class="card__image">
+    <div class="card__content">
+        <h3 class="card__title">Título do Card</h3>
+        <p class="card__description">Descrição do card</p>
+        <a href="#" class="card__link">Link</a>
+    </div>
+</div>
+
+<!-- CSS -->
+.card {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.card__image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.card__content {
+    padding: 10px;
+}
+
+.card__title {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.card__description {
+    font-size: 14px;
+    color: #666;
+}
+
+.card__link {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+}
+</code></pre>
+
+<h3>Conclusão</h3>
+<p>OOCSS é uma metodologia eficaz para desenvolver CSS de maneira modular e reutilizável. Ao separar a estrutura (objetos) do visual (skins), OOCSS promove uma organização clara e eficiente dos estilos, facilitando a manutenção, escalabilidade e performance dos projetos web.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ORrieYyipbc?si=p8bku8V0hfiY8IKl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <a href="http://oocss.org/">Leia mais</a>
+            </div>
+            <!--// fechamento postagem -->
+
+            <!-- abertura postagem -->
+            <div class="postagem">
+                <h2> CSS-in-JS  </h2>
+                <span class="data-postagem">postado 10 março 2022</span>
+                <img width="620px" src="../imagens/imagem metodologia/logo smacss.webp">
+                <h1>Metodologia CSS-in-JS</h1>
+
+    <section>
+        <h2 class="section-title">Introdução</h2>
+        <p class="paragraph">CSS-in-JS refere-se a uma abordagem em que o CSS é escrito diretamente em JavaScript, geralmente como parte da lógica de componentes em frameworks de front-end como React, Vue.js, Angular, entre outros. Isso elimina a necessidade de arquivos de estilo separados, mantendo os estilos encapsulados e diretamente associados aos componentes que eles estilizam.</p>
+    </section>
+
+    <section>
+        <h2 class="section-title">Filosofia e Objetivos</h2>
+        <p class="paragraph">A metodologia CSS-in-JS tem como principais objetivos:</p>
+        <ul class="paragraph">
+            <li>Encapsulamento: Manter estilos encapsulados dentro de cada componente para evitar conflitos e melhorar a modularidade.</li>
+            <li>Escopo automático: Gerenciar automaticamente o escopo dos estilos, evitando vazamentos globais.</li>
+            <li>Manutenção simplificada: Facilitar a manutenção ao associar diretamente o estilo com o componente correspondente.</li>
+            <li>Performance: Otimizar o carregamento de estilos e a renderização do componente.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2 class="section-title">Implementação</h2>
+        <p class="paragraph">A implementação de CSS-in-JS varia de acordo com o framework utilizado. Abaixo está um exemplo genérico de como seria a sintaxe em JavaScript:</p>
+        <pre class="code-example"><code>import styled from 'styled-components';
+
+const Button = styled.button`
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #2980b9;
+    }
+`;
+
+function App() {
+    return (
+        <div>
+            <Button>Click me</Button>
+        </div>
+    );
+}</code></pre>
+    </section>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/DHGhFJZLKMs?si=uDKxzlfMa0PJDKla" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <a href="https://cssinjs.org/?v=v10.10.1">Leia mais</a>
+            </div>
+            <!--// fechamento postagem -->
+
+
+
+        </div>
+        <div id="area-lateral">
+
+
+            <div class="conteudo-lateral">
+                <h3>Postagens recentes</h3>
+
+                <div class="postagem-lateral">
+                    <p>conteudo aqui...</p>
+                    <a href="">Leia mais</a>
+                </div>
+
+                <div class="postagem-lateral" style="border-bottom: none;">
+                    <p>conteudo aqui...</p>
+                    <a href="">Leia mais</a>
+                </div>
+
+                <div class="postagem-lateral" style="border-bottom: none;">
+                    <p>conteudo aqui...</p>
+                    <a href="">Leia mais</a>
+                </div>
+
+                <div class="postagem-lateral" style="border-bottom: none;">
+                    <p>conteudo aqui...</p>
+                    <a href="">Leia mais</a>
+                </div>
+
+            </div>
+
+            <div class="conteudo-lateral">
+                <h3>Categorias</h3>
+
+                <a href="../index.html">Home</a>
+            <a href="paginas/Frameworks_css .html">Frameworks css </a>
+            <a href="paginas/Pre –processadores de.html">Pre –processadores css </a>
+            <a href="paginas/Metodologias de css.html">Metodologias de css</a>
+
+            </div>
+
+
+        </div>
+
+        <div id="rodape">
+            Todos os direitos reservados
+        </div>
+
+    </div>
+
+</body>
+
+</html>
